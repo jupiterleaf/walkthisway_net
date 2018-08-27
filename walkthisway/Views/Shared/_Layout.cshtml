@@ -3,46 +3,107 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - Walk This Way</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">\
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    <!-- Material Design Lite -->
+    <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <!-- Material Design icon font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 <body>
-    <div>
-        <img src="~/img/Logo.jpg" />
-    </div>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Walk This Way", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+    <div class="content body-content">
+        <nav class="navbar navbar-inverse navbar-expand-sm navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @Html.ActionLink("WalkThisWay", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="nav-item">@Html.ActionLink("Road Safty", "RoadSafety", "Home")</li>
+                        <li class="nav-item">@Html.ActionLink("Navigation", "Navigation", "Home")</li>
+                        <li class="nav-item">@Html.ActionLink("forum", "forum", "home")</li>
+                        @*<li>@Html.ActionLink("Home", "Index", "Home")</li>*@
+                        <li class="nav-item">@Html.ActionLink("About", "About", "Home")</li>
+                        <li class="nav-item">@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    </ul>
+                </div>
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Road Safty", "RoadSafety", "Home")</li>
-                    <li>@Html.ActionLink("Navigation","Navigation","Home")</li>
-                    <li>@Html.ActionLink("forum","forum","home")</li>
-                    @*<li>@Html.ActionLink("Home", "Index", "Home")</li>*@
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
-            </div>
-        </div>
+        </nav>
     </div>
 
-    <div class="container body-content">
+    <div class="body-content">
         @RenderBody()
         <hr />
-        <footer>
+        <footer class="mdl-mega-footer">
+            <div class="mdl-mega-footer__middle-section">
+
+                <div class="mdl-mega-footer__drop-down-section">
+                    <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+                    <h1 class="mdl-mega-footer__heading">Features</h1>
+                    <ul class="mdl-mega-footer__link-list">
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Terms</a></li>
+                        <li><a href="#">Partners</a></li>
+                        <li><a href="#">Updates</a></li>
+                    </ul>
+                </div>
+
+                <div class="mdl-mega-footer__drop-down-section">
+                    <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+                    <h1 class="mdl-mega-footer__heading">Details</h1>
+                    <ul class="mdl-mega-footer__link-list">
+                        <li><a href="#">Specs</a></li>
+                        <li><a href="#">Tools</a></li>
+                        <li><a href="#">Resources</a></li>
+                    </ul>
+                </div>
+
+                <div class="mdl-mega-footer__drop-down-section">
+                    <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+                    <h1 class="mdl-mega-footer__heading">Technology</h1>
+                    <ul class="mdl-mega-footer__link-list">
+                        <li><a href="#">How it works</a></li>
+                        <li><a href="#">Patterns</a></li>
+                        <li><a href="#">Usage</a></li>
+                        <li><a href="#">Products</a></li>
+                        <li><a href="#">Contracts</a></li>
+                    </ul>
+                </div>
+
+                <div class="mdl-mega-footer__drop-down-section">
+                    <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+                    <h1 class="mdl-mega-footer__heading">FAQ</h1>
+                    <ul class="mdl-mega-footer__link-list">
+                        <li><a href="#">Questions</a></li>
+                        <li><a href="#">Answers</a></li>
+                        <li><a href="#">Contact us</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="mdl-mega-footer__bottom-section">
+                <div class="mdl-logo">Title</div>
+                <ul class="mdl-mega-footer__link-list">
+                    <li><a href="#">Help</a></li>
+                    <li><a href="#">Privacy & Terms</a></li>
+                </ul>
+            </div>
             <p>&copy; @DateTime.Now.Year - TechBees Application</p>
         </footer>
     </div>
